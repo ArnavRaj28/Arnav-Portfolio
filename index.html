@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="A personal website of Arnav Raj" />
+
+    <title>Arnav Raj</title>
+
+	<link rel="icon"  href="assets/img/Arnav Raj.png" />
+   <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <!-- EmailJS SDK -->
+   <script type="text/javascript"
+   src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+ emailjs.init({
+   publicKey: "pToSmsRl4NtXJfDPz",
+ });
+})();
+</script>
+   <!-- SweetAlert Library for alerts -->
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" >
+    <!-- Fonts -->
+    <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome.min.css">
+    <!-- Slicknav -->
+    <link rel="stylesheet" type="text/css" href="assets/css/slicknav.css">
+    <!-- Menu CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/menu_sideslide.css">
+    <!-- Slider CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/slide-style.css">
+    <!-- Nivo Lightbox -->
+    <link rel="stylesheet" type="text/css" href="assets/css/nivo-lightbox.css" >
+    <!-- Animate -->
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <!-- Main Style -->
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <!-- Responsive Style -->
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Warnes&display=swap" rel="stylesheet">
+<style type="text/css">
+body{ 
+	font: normal 13px/20px Arial, Helvetica, sans-serif; word-wrap:break-word;
+	color: #eee;
+	background: #353535;
+}
+#countdown{
+	width: 465px;
+	height: 112px;
+	text-align: center;
+	background: #222;
+	background-image: -webkit-linear-gradient(top, #222, #333, #333, #222); 
+	background-image:    -moz-linear-gradient(top, #222, #333, #333, #222);
+	background-image:     -ms-linear-gradient(top, #222, #333, #333, #222);
+	background-image:      -o-linear-gradient(top, #222, #333, #333, #222);
+	border: 1px solid #111;
+	border-radius: 5px;
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
+	margin: auto;
+	padding: 24px 0;
+	position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+}
+
+#countdown:before{
+	content:"";
+	width: 8px;
+	height: 65px;
+	background: #444;
+	background-image: -webkit-linear-gradient(top, #555, #444, #444, #555); 
+	background-image:    -moz-linear-gradient(top, #555, #444, #444, #555);
+	background-image:     -ms-linear-gradient(top, #555, #444, #444, #555);
+	background-image:      -o-linear-gradient(top, #555, #444, #444, #555);
+	border: 1px solid #111;
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+	display: block;
+	position: absolute;
+	top: 48px; left: -10px;
+}
+
+#countdown:after{
+	content:"";
+	width: 8px;
+	height: 65px;
+	background: #444;
+	background-image: -webkit-linear-gradient(top, #555, #444, #444, #555); 
+	background-image:    -moz-linear-gradient(top, #555, #444, #444, #555);
+	background-image:     -ms-linear-gradient(top, #555, #444, #444, #555);
+	background-image:      -o-linear-gradient(top, #555, #444, #444, #555);
+	border: 1px solid #111;
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+	display: block;
+	position: absolute;
+	top: 48px; right: -10px;
+}
+
+#countdown #tiles{
+	position: relative;
+	z-index: 1;
+}
+
+#countdown #tiles > span{
+	width: 92px;
+	max-width: 92px;
+	font: bold 48px 'Droid Sans', Arial, sans-serif;
+	text-align: center;
+	color: #111;
+	background-color: #ddd;
+	background-image: -webkit-linear-gradient(top, #bbb, #eee); 
+	background-image:    -moz-linear-gradient(top, #bbb, #eee);
+	background-image:     -ms-linear-gradient(top, #bbb, #eee);
+	background-image:      -o-linear-gradient(top, #bbb, #eee);
+	border-top: 1px solid #fff;
+	border-radius: 3px;
+	box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.7);
+	margin: 0 7px;
+	padding: 18px 0;
+	display: inline-block;
+	position: relative;
+}
+
+#countdown #tiles > span:before{
+	content:"";
+	width: 100%;
+	height: 13px;
+	background: #111;
+	display: block;
+	padding: 0 3px;
+	position: absolute;
+	top: 41%; left: -3px;
+	z-index: -1;
+}
+
+#countdown #tiles > span:after{
+	content:"";
+	width: 100%;
+	height: 1px;
+	background: #eee;
+	border-top: 1px solid #333;
+	display: block;
+	position: absolute;
+	top: 48%; left: 0;
+}
+
+#countdown .labels{
+	width: 100%;
+	height: 25px;
+	text-align: center;
+	position: absolute;
+	bottom: 8px;
+}
+
+#countdown .labels li{
+	width: 102px;
+	font: bold 15px 'Droid Sans', Arial, sans-serif;
+	color: #f47321;
+	text-shadow: 1px 1px 0px #000;
+	text-align: center;
+	text-transform: uppercase;
+	display: inline-block;
+}
+.navbar-brand{
+	font-family: 'Warnes', cursive;
+    font-weight: bold;
+    color: #5ab5d9;
+}
+.pro-detail{
+	color: #fff;
+}
+.line-sub-title{
+	color: #353535;
+}
+</style>
+  </head>
+  <body>
+
+    <!-- Header Area wrapper Starts -->
+    <header id="header-wrap">
+      <!-- Navbar Start -->
+      <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+              <span class="icon-menu"></span>
+              <span class="icon-menu"></span>
+              <span class="icon-menu"></span>
+            </button>
+            <a href="index.html" class="navbar-brand">Arnav Raj</a>
+          </div>
+          <div class="collapse navbar-collapse" id="main-navbar">
+            <ul class="onepage-nev navbar-nav mr-auto w-100 justify-content-end clearfix">
+              <li class="nav-item active">
+                <a class="nav-link" href="#hero-area">
+                  Home
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">
+                  About
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#resume">
+                  Resume
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#project" target="_blank">
+                  Projects
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Start -->
+        <ul class="onepage-nev mobile-menu">
+          <li>
+            <a href="#home">Home</a>
+          </li>
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#resume">Resume</a>
+          </li>
+          <li>
+            <a href="#project">Projects</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+        <!-- Mobile Menu End -->
+      </nav>
+      <!-- Navbar End -->
+
+      <!-- Hero Area Start -->
+      <div id="hero-area" class="hero-area-bg">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 text-center">
+              <div class="contents">
+                <h5 class="script-font wow fadeInUp" data-wow-delay="0.2s">Hi This is</h5>
+                <h2 class="head-title wow fadeInUp" data-wow-delay="0.4s">Arnav Raj</h2>
+                <p class="script-font wow fadeInUp" data-wow-delay="0.6s">Web Developer</p>
+                <ul class="social-icon wow fadeInUp" data-wow-delay="0.8s">
+                  <li>
+                    <a class="facebook" href="https://www.facebook.com/profile.php?id=100034211348124" target="_blank"><i class="fab fa-facebook"></i></a>
+                </li>
+                <li>
+                    <a class="github" href="https://github.com/ArnavRaj28" target="_blank"><i class="fab fa-github"></i></a>
+                </li>
+                <li>
+                    <a class="gmail" href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=new" target="_blank"><i class="fas fa-envelope"></i></a>
+                </li>
+                <li>
+                    <a class="linkedin" href="https://www.linkedin.com/in/arnav-raj-932676206/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </li>
+                </ul>
+                <div class="header-button wow fadeInUp" data-wow-delay="1s">
+                  <a href="https://drive.google.com/file/d/1Vu_vf-ieOSW3pjoSLLYTwNBXc6b3qxkE/view?usp=drive_link" class="btn btn-common">Download Resume</a>
+                </div>
+                <h3 class="script-font wow fadeInUp" data-wow-delay="0.9s">" God Never Forgets Your Prayers, He Answers When The Time Is Right "</h5>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Hero Area End -->
+
+    </header>
+    <!-- Header Area wrapper End -->
+
+    <!-- About Section Start -->
+    <section id="about" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="img-thumb wow fadeInLeft" data-wow-delay="0.3s">
+              <img class="img-fluid" src="assets/img/Arnav Raj.png" alt="">
+            </div>
+          </div> 
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="profile-wrapper wow fadeInRight" data-wow-delay="0.3s">
+              <h3>Hi Guys!</h3>
+              <p>  I Am Arnav Raj, I Recently Completed My B.Tech in Computer Science And Engineering From The Bengal college of Engineering And Technology. 
+                I Have a Strong Understanding of Design.I am proficient in HTML, CSS, JavaScript and React. 
+                I Can Quickly adapt to Any Language and technology being asked to And Progress with it Exponentially.
+                I am a very passionate software programmer located in Gaya, India. I always look for the latest technologies and eagerly waiting for the challenges.</p>
+              <div class="about-profile">
+                <ul class="admin-profile">
+                  <li><span class="pro-title"> Name </span> <span class="pro-detail">Arnav Raj</span></li>
+                  <li><span class="pro-title"> Age </span> <span class="pro-detail">21 Years</span></li>
+          <!--    <li><span class="pro-title"> Experience </span> <span class="pro-detail">1+ Years</span></li>      -->
+                  <li><span class="pro-title"> Country </span> <span class="pro-detail">India</span></li>
+                  <li><span class="pro-title"> Location </span> <span class="pro-detail">Gaya, India</span></li>
+                  <li><span class="pro-title"> E-mail </span> <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=new"><span class="pro-detail">arnavraj313@gmail.com</span></a></li>
+                  <li><span class="pro-title"> Phone </span> <a href="tel:+919747256931"><span class="pro-detail">+ 91 754 953 2253</span></a></li>
+                </ul>
+              </div>	
+              <a href="#contact" class="btn btn-danger"><i class="icon-speech"></i> Contact Me</a>
+              
+            </div>
+          </div>   
+        </div>
+      </div>
+    </section>
+    <!-- About Section End -->
+
+   
+
+    <!-- Resume Section Start -->
+    <div id="resume" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="education wow fadeInRight" data-wow-delay="0.3s">
+              <ul class="timeline">
+                <li>
+                  <i class="fas fa-graduation-cap"></i>
+                  <h2 class="timelin-title">Education</h2>
+                </li>
+                <li>
+                  <div class="content-text">
+                    <h3 class="line-title">B.Tech - MAKAUT, W.B</h3>
+                    <span class="line-sub-title">2019 - 2023</span>
+                    <span class="line-sub-title">CGPA - 9.10</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="content-text">
+                    <h3 class="line-title">Science - Gaya College Gaya</h3>
+                    <span class="line-sub-title">2017 - 2019</span>
+                    <span class="line-sub-title">Percentage - 72.4%</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="content-text">
+                    <h3 class="line-title">Higher Secondary School - Al-Momin Inter School</h3>
+                    <span class="line-sub-title">2013 - 2017</span>
+                    <span class="line-sub-title">CGPA - 9.4</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="experience wow fadeInRight" data-wow-delay="0.6s">
+              <ul class="timeline">
+                <li>
+                  <i class="fas fa-briefcase"></i>
+                  <h2 class="timelin-title">Experience</h2>
+                </li>
+                <li>
+                  <div class="content-text">
+                    <h3 class="line-title">Web Development Intern - LetsGrowMore</h3>
+                    <span class="line-sub-title">Sept 2021 - Oct 2021</span>
+                  </div>
+                </li>
+              </ul>
+
+              <ul class="timeline">
+                <li>
+                  <i class="fas fa-trophy"></i>
+                  <h2 class="timelin-title">HONOURS AND ACHIEVEMENTS</h2>
+                </li>
+                <li>
+                  <div class="content-text">
+                    <h3 class="line-title">HackerRank</h3>
+                    <span class="line-sub-title">Strengthened Java (Basic) skills through rigorous practice and independent study, 
+                      achieving a score of 90% or higher on all practice assessments..
+                   </span>
+                  </div>
+                </li>
+              <li>
+                <div class="content-text">
+                  <h3 class="line-title">GeeksforGeeks</h3>
+                  <span class="line-sub-title">I have solved 200+ questions (Basic, Easy, Medium). to be continued.</span>
+                </div>
+              </li>
+            </ul>
+            </div>
+          </div>
+          <div class="col-lg-9 col-md-10 col-sm-6">
+            <div class="education wow fadeInRight" data-wow-delay="0.3s">
+            <ul class="timeline">
+              <li>
+                <i class="fas fa-puzzle-piece"></i>
+                <h2 class="timelin-title">EXTRA-CURRICULAR-ACTIVITIES</h2>
+              </li>
+              <li>
+                <div class="content-text">
+                  <h3 class="line-title">Paper Drive</h3>
+                  <span class="line-sub-title"> Actively participated in a paper and clothing drive 
+                    campaign organized by the National Service Scheme (NSS). Contributed to
+                    the collection of newspapers and clothing items to support recycling and charitable initiatives.
+               </span>
+                </div>
+              </li>
+              <li>
+                <div class="content-text">
+                  <h3 class="line-title">Made a Report For Tech-Fest 2020</h3>
+                  <span class="line-sub-title">The report discussed energy and its potential usefulness in arid regions like the Thar Desert.
+                    Additionally, we examined the location of the solar plant and estimated its energy production capacity.
+               </span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- Resume Section End -->
+
+
+    <!-- Project Section Start -->
+        <div id="project" class="section-padding">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-9 col-md-9 col-sm-9">
+                <div class="education wow fadeInRight" data-wow-delay="0.3s">
+                  <ul class="timeline">
+                    <li>
+                      <i class="fas fa-briefcase"></i>
+                      <h2 class="timelin-title">Projects</h2>
+                    </li>
+                    <li>
+                      <div class="content-text">
+                        <a href="https://arnavraj28.github.io/Spotify-Arnav/">
+                          <h3 class="line-title">Spotify</h3>
+                       </a>
+                        <span class="line-sub-title">The web application enables users to effortlessly play, pause, and skip songs,
+                           ensuring a seamless and enjoyable music streaming experience directly within their web browsers.
+                            The tech stack utilized includes HTML, CSS, and JavaScript.
+                      </span>
+                  
+                      </div>
+                    </li>
+                    <li>
+                      <div class="content-text">
+                        <a href="https://github.com/ArnavRaj28/IMDB">
+                          <h3 class="line-title">IMBD Clone</h3>
+                       </a>
+                        <span class="line-sub-title">Summary about movies by using the moviedb API and movies rating
+                          Project aimed to apply and reinforce acquired skills through practical implementation.                                                                       
+                          The tech stack is used HTML, CSS, JavaScript, and React Js.</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="content-text">
+                        <a href="https://arnavraj28.github.io/Kanak-Priya-Birthday-Cards/">
+                          <h3 class="line-title">Birthday-Card</h3>
+                       </a>
+                        <span class="line-sub-title">The project focuses on creating a simple webpage. In this project, you will
+                          add a photo of the birthday boy or girl and a song. When the photo is clicked, it will rotate 360 degrees
+                          and the song will play. Additionally, create buttons to pause and mute the song. The tech stack used includes HTML, CSS, and JavaScript.
+                      </span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="content-text">
+                        <a href="https://arnavraj28.github.io/Weather/">
+                          <h3 class="line-title">Weather</h3>
+                       </a>
+                        <span class="line-sub-title"> The project displays a daily weather report by using a weather API to fetch data.
+                           The tech stack used includes HTML, CSS, and JavaScript.
+                      </span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="content-text">
+                        <a href="https://arnavraj28.github.io/Festival/">
+                          <h3 class="line-title">Happy Krishna Janmashtami</h3>
+                       </a>
+                        <span class="line-sub-title">The project focuses on creating wishing cards                                                                      
+                          The tech stack is used HTML, CSS.</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Project Section End -->
+
+
+    <!-- Contact Section Start -->
+    <section id="contact" class="section-padding">      
+      <div class="contact-form">
+        <div class="container">
+          <div class="row contact-form-area wow fadeInUp" data-wow-delay="0.4s">          
+            <div class="col-md-6 col-lg-6 col-sm-12">
+              <div class="contact-block">
+                <h2>Contact Form</h2>
+                <form id="contactForm">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input type="text" class="form-control" id="mail-name" name="to_name" placeholder="Name" required data-error="Please enter your name">
+                        <div class="help-block with-errors"></div>
+                      </div>                                 
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input type="text" placeholder="Email" id="mail-email" class="form-control" name="your_email" required data-error="Please enter your email">
+                        <div class="help-block with-errors"></div>
+                      </div> 
+                    </div>
+                     <div class="col-md-12">
+                      <div class="form-group">
+                        <input type="text" placeholder="Subject" id="mail-subject" class="form-control" name="subject" required data-error="Please enter your subject">
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group"> 
+                        <textarea class="form-control" id="mail-message" name="message" placeholder="Your Message" rows="5" data-error="Write your message" required></textarea>
+                        <div class="help-block with-errors"></div>
+                      </div>
+                      <div class="submit-button">
+                        <button class="btn btn-common" id="submit" type="submit">Send Message</button>
+                        <div id="msgSubmit" class="h3 text-center hidden"></div> 
+                        <div class="clearfix"></div> 
+                      </div>
+                    </div>
+                  </div>            
+                </form>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-12">
+              <div class="footer-right-area wow fadeIn">
+                <h2>Contact Address</h2>
+                <div class="footer-right-contact">
+                  <div class="single-contact">
+                    <div class="contact-icon">
+                      <i class="fa fa-map-marker"></i>
+                    </div>
+                    <p>Gaya Bihar, India</p>
+                  </div>
+                  <div class="single-contact">
+                    <div class="contact-icon">
+                      <i class="fa fa-envelope"></i>
+                    </div>
+                    <p><a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=new">arnavraj313@gmail.com</a></p>
+                  </div>
+                  <div class="single-contact">
+                    <div class="contact-icon">
+                      <i class="fa fa-phone"></i>
+                    </div>
+                    <p><a href="tel:+919747256931">+ 91 754 953 2253</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+            </div>
+          </div>
+        </div>
+      </div>   
+    </section>
+    <!-- Contact Section End -->
+
+    <!-- Footer Section Start -->
+    <footer class="footer-area section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="footer-text text-center wow fadeInDown" data-wow-delay="0.3s">
+              <ul class="social-icon">
+                <li>
+                  <a class="gmail" href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=new" target="_blank"><i class="fas fa-envelope"></i></a>
+              </li>
+              <li>
+                  <a class="linkedin" href="https://www.linkedin.com/in/arnav-raj-932676206/" target="_blank"><i class="fab fa-linkedin"></i></a>
+              </li>
+              </ul>
+              <p>Copyright © 2024 arnav raj All Right Reserved</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Go to Top Link -->
+    <a href="#" class="back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="assets/js/jquery-min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.mixitup.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/wow.js"></script>
+    <script src="assets/js/jquery.nav.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>  
+    <script src="assets/js/nivo-lightbox.js"></script>
+    <script src="assets/js/jquery.slicknav.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/form-validator.min.js"></script>
+    <script src="assets/js/contact-form-script.min.js"></script>
+    <script src="assets/js/map.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+    function sendMail() {
+        let params = {
+            from_name: document.getElementById('mail-name').value,
+            your_email: document.getElementById('mail-email').value,
+            subject: document.getElementById('mail-subject').value,
+            message: document.getElementById('mail-message').value
+        };
+
+        console.log(params); // Debugging statement to check the captured values
+
+        emailjs.send('service_3jr0fsq', 'template_fp9fn2g', params)
+            .then(function() {
+                Swal.fire('Great..!!', 'Posted successfully', 'success');
+                document.getElementById('contactForm').reset();
+            })
+            .catch(function(error) {
+                Swal.fire('Oops...', 'Something went wrong: ' + error, 'error');
+            });
+    }
+
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        sendMail();
+    });
+</script>
+
+
+
+</script>
+  </body>
+</html>
